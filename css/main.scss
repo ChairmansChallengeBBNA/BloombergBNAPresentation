@@ -1,0 +1,56 @@
+// IMPORT ALL BASE CODE
+@import 'imports/imports';
+
+// IMPORT ALL PAGE STYLES
+//@import 'imports/imports';
+
+// IMPORT ALL ZONE STYLES
+//@import 'imports/imports';
+
+// IMPORT COMPONENT STYLES
+//@import 'imports/imports';
+
+
+script, title, style, meta, head{ @extend .no; }
+
+body, html{ @extend .con, .full; }
+
+body{
+    
+    @extend .flex;
+    
+    #app{
+        
+        @include hw(90vh, 600px);
+        background: linear-gradient(115deg, #2c3e50 0%, white 500%);
+        box-shadow: 0 3px 10px mix(black, white, 50%);
+        overflow-x: hidden;
+        padding: 30px;
+        
+        ul {
+            
+            li{
+                
+                margin: 7px 0;
+                color: white;
+                background-color:cadetblue;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 3px 5px rgba(0,0,0,.25);
+                
+            }
+            
+        }
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+

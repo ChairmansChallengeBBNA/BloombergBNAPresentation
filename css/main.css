@@ -1,0 +1,112 @@
+@import url(http://yui.yahooapis.com/pure/0.6.0/pure-min.css);
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,900,200,300,700|Source+Sans+Pro:400,900,300,200|Lato:400,100,300|Open+Sans:400,300,600|Oswald:300,400,700);
+.no, script, title, style, meta, head {
+  display: none;
+  visibility: none; }
+
+.reset, .full, body, html, * {
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  text-decoration: none;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  box-sizing: border-box; }
+
+.full, body, html {
+  height: 100vh;
+  width: 100vw; }
+
+.fill {
+  height: 100%;
+  width: 100%; }
+
+.con, html, body {
+  position: relative;
+  z-index: 1;
+  left: 0%; }
+
+.ab, .abCenter, .logo-header-menu {
+  position: absolute;
+  float: left;
+  top: 0px;
+  left: 0px;
+  display: block; }
+
+.abCenter {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%); }
+
+.centerBg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.flex, .flex-holder, body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.holder, .flex-holder {
+  width: 70%;
+  margin: 0 15%; }
+
+.text-shadow {
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6); }
+
+.logo-header-menu {
+  position: fixed;
+  z-index: 5; }
+
+* {
+  -webkit-transition: all ease .35s;
+  -o-transition: all ease .35s;
+  transition: all ease .35s;
+  list-style: none;
+  text-decoration: none; }
+
+html, body {
+  width: 100vw;
+  overflow-x: hidden; }
+
+/* 
+- open sans
+- lato
+- oswald
+- work sans
+- source sans
+-*/
+body #app {
+  height: 90vh;
+  width: 600px;
+  background: -webkit-linear-gradient(335deg, #2c3e50 0%, white 500%);
+  background: -o-linear-gradient(335deg, #2c3e50 0%, white 500%);
+  background: linear-gradient(115deg, #2c3e50 0%, white 500%);
+  -webkit-box-shadow: 0 3px 10px gray;
+  box-shadow: 0 3px 10px gray;
+  overflow-x: hidden;
+  padding: 30px; }
+  body #app ul li {
+    margin: 7px 0;
+    color: white;
+    background-color: cadetblue;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25); }
