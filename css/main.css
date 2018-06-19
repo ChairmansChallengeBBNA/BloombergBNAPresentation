@@ -4,7 +4,7 @@
   display: none;
   visibility: none; }
 
-.reset, .full, body, html, * {
+.reset, .full, body, html, body #app, body #app:after, body #app nav:after, body #app main .photos, body #app main .bottom, body #app .modal, * {
   margin: 0px;
   padding: 0px;
   display: block;
@@ -16,39 +16,39 @@
   box-sizing: border-box;
   box-sizing: border-box; }
 
-.full, body, html {
+.full, body, html, body #app, body #app:after, body #app nav:after, body #app main .photos, body #app main .bottom, body #app .modal {
   height: 100vh;
   width: 100vw; }
 
-.fill {
+.fill, body #app .modal .close {
   height: 100%;
   width: 100%; }
 
-.con, html, body {
+.con, html, body, body #app, body #app nav .wrap, body #app nav .wrap ul li, body #app header hgroup, body #app main .top, body #app main .top > span, body #app main .photos, body #app main .bottom, body #app main .bottom ul li, body #app .thumb {
   position: relative;
   z-index: 1;
   left: 0%; }
 
-.ab, .abCenter, .logo-header-menu {
+.ab, .abCenter, body #app video, body #app nav .wrap ul, .logo-header-menu, body #app:after, body #app nav, body #app nav .wrap ul li > *, body #app nav:after, body #app main .top > span > *, body #app .modal, body #app .modal > .video, body #app .modal > .video > iframe, body #app .modal > .video > iframe *, body #app .modal .close {
   position: absolute;
   float: left;
   top: 0px;
   left: 0px;
   display: block; }
 
-.abCenter {
+.abCenter, body #app video, body #app nav .wrap ul {
   left: 50%;
   top: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%); }
 
-.centerBg {
+.centerBg, body #app:after, body #app main .top > span, body #app main .photos .gallery > * {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
 
-.flex, .flex-holder, body {
+.flex, .flex-holder, body #app main .photos .gallery, body #app main .photos ul, body #app main .photos ul li, body #app main .bottom ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,20 +93,278 @@ html, body {
 - source sans
 -*/
 body #app {
-  height: 90vh;
-  width: 600px;
-  background: -webkit-linear-gradient(335deg, #2c3e50 0%, white 500%);
-  background: -o-linear-gradient(335deg, #2c3e50 0%, white 500%);
-  background: linear-gradient(115deg, #2c3e50 0%, white 500%);
-  -webkit-box-shadow: 0 3px 10px gray;
-  box-shadow: 0 3px 10px gray;
+  overflow-y: scroll;
   overflow-x: hidden;
-  padding: 30px; }
-  body #app ul li {
-    margin: 7px 0;
-    color: white;
-    background-color: cadetblue;
-    padding: 10px;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25); }
+  background-color: white; }
+  body #app:after {
+    content: "";
+    background-size: contain;
+    background-position: bottom right;
+    z-index: -1;
+    pointer-events: none;
+    position: fixed;
+    background-image: url(assets/Footerimage.png); }
+  body #app video {
+    position: fixed;
+    z-index: -1;
+    height: auto;
+    width: auto;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-position: center;
+    background-size: cover;
+    opacity: .1;
+    display: none; }
+  body #app nav {
+    position: fixed;
+    z-index: 1000;
+    height: 100vh;
+    width: 100px; }
+    body #app nav .wrap {
+      background-color: rgba(255, 255, 255, 0);
+      height: 100vh;
+      width: 100px;
+      z-index: 1;
+      overflow: hidden; }
+      body #app nav .wrap ul {
+        width: 30px; }
+
+@-webkit-keyframes link {
+  0% {
+    r: 0;
+    stroke-width: 0; }
+  50% {
+    stroke-width: 5; }
+  100% {
+    r: 10;
+    stroke-width: 0; } }
+
+@keyframes link {
+  0% {
+    r: 0;
+    stroke-width: 0; }
+  50% {
+    stroke-width: 5; }
+  100% {
+    r: 10;
+    stroke-width: 0; } }
+        body #app nav .wrap ul li {
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          height: 30px;
+          width: 30px;
+          cursor: pointer; }
+          body #app nav .wrap ul li svg {
+            height: 30px;
+            width: 30px;
+            viewBox: 0 0 15 15; }
+            body #app nav .wrap ul li svg circle {
+              cx: 15;
+              cy: 15;
+              fill: gray;
+              r: 5; }
+          body #app nav .wrap ul li span {
+            -webkit-transform: translateX(25px);
+            -ms-transform: translateX(25px);
+            transform: translateX(25px);
+            opacity: 0;
+            line-height: 30px;
+            width: 200px; }
+        body #app nav .wrap ul li:hover svg:first-child circle {
+          r: 6; }
+        body #app nav .wrap ul li:active svg:first-child circle {
+          r: 4; }
+    body #app nav:after {
+      content: "";
+      background-color: transparent;
+      pointer-events: none !important;
+      z-index: -1;
+      -webkit-transition: all .25s ease 0s;
+      -o-transition: all .25s ease 0s;
+      transition: all .25s ease 0s; }
+    body #app nav:hover .wrap {
+      width: 250px;
+      -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      background-color: white; }
+      body #app nav:hover .wrap ul {
+        width: 170px; }
+        body #app nav:hover .wrap ul li span {
+          opacity: 1;
+          -webkit-transform: translateX(35px);
+          -ms-transform: translateX(35px);
+          transform: translateX(35px); }
+    body #app nav:hover:after {
+      background-color: rgba(0, 0, 0, 0.7); }
+  body #app header hgroup {
+    height: 20vh;
+    width: 100%;
+    padding-top: 7.5vh;
+    color: black;
+    text-shadow: 0 2.5px 30px rgba(0, 0, 0, 0.1); }
+    body #app header hgroup > * {
+      width: 100%;
+      text-align: center; }
+    body #app header hgroup .logo {
+      height: 50px;
+      width: 400px;
+      margin-left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      background-size: 35%;
+      background-image: url(assets/BNA_color.svg);
+      background-repeat: no-repeat;
+      background-position: center center; }
+  body #app main .top {
+    height: 80vh;
+    width: 100%;
+    padding: 30px 120px 80px 120px; }
+    body #app main .top div, body #app main .top > span {
+      float: left;
+      display: block;
+      width: 50%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box; }
+    body #app main .top div {
+      padding-right: 30px; }
+      body #app main .top div h2 {
+        font-family: "open sans", sans-serif;
+        font-weight: 700;
+        font-size: 2.25em;
+        margin-bottom: 20px; }
+      body #app main .top div p {
+        font-family: "work sans", sans-serif;
+        font-weight: 500;
+        font-size: 2em; }
+    body #app main .top > span {
+      height: 60%;
+      background-color: rgba(0, 0, 0, 0.5);
+      background-image: url(assets/frontvideo.png);
+      cursor: pointer; }
+      body #app main .top > span h3 {
+        padding: 30px 0 0 30px;
+        color: white;
+        font-family: "source sans pro", sans-serif;
+        font-weight: 500;
+        font-size: 1.5em;
+        text-shadow: 0 2px 30px black; }
+      body #app main .top > span > span {
+        padding: 30px;
+        top: 100%;
+        background-color: #dfdfdf;
+        color: rgba(0, 0, 0, 0.8);
+        text-shadow: 0 2px 30px rgba(0, 0, 0, 0.25); }
+        body #app main .top > span > span h4 {
+          margin-bottom: 10px;
+          font-family: "source sans pro", sans-serif;
+          font-weight: 500;
+          font-size: 1.25em; }
+  body #app main .photos {
+    padding: 20px 120px 0; }
+    body #app main .photos h3 {
+      width: 100%;
+      text-align: center;
+      font-family: "open sans", sans-serif;
+      font-weight: 500;
+      font-size: 3em; }
+    body #app main .photos .gallery {
+      padding: 20px 0 0;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      body #app main .photos .gallery > * {
+        background-color: grey;
+        height: 30vh;
+        width: calc(50% - 40px);
+        background-position: top center; }
+    body #app main .photos .copy {
+      padding: 15px 0 0; }
+      body #app main .photos .copy h4 {
+        width: 100%;
+        margin-bottom: 5px;
+        font-family: "open sans", sans-serif;
+        font-weight: 500;
+        font-size: 1.5em; }
+      body #app main .photos .copy p {
+        font-family: "open sans", sans-serif;
+        font-weight: 500;
+        font-size: 1em; }
+    body #app main .photos ul {
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      body #app main .photos ul li {
+        width: calc(20% - 20px);
+        margin-top: 30px;
+        height: 15vh;
+        background-color: rgba(0, 0, 0, 0.2); }
+  body #app main .bottom {
+    padding: 0 120px 0; }
+    body #app main .bottom h4 {
+      width: 100%;
+      padding-top: 10vh;
+      text-align: center;
+      font-family: "open sans", sans-serif;
+      font-weight: 500;
+      font-size: 3em;
+      margin-bottom: 30px; }
+    body #app main .bottom p {
+      font-family: "open sans", sans-serif;
+      font-weight: 500;
+      font-size: 1.75em;
+      margin: 40px 0; }
+    body #app main .bottom ul {
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      body #app main .bottom ul li {
+        width: calc(25% - 20px);
+        margin-top: 30px;
+        height: 20vh;
+        height: 25vh; }
+  body #app main section {
+    opacity: 1; }
+  body #app main section.show {
+    opacity: 1; }
+  body #app nav:hover ~ * {
+    -webkit-transform: translateX(75px);
+    -ms-transform: translateX(75px);
+    transform: translateX(75px); }
+  body #app .modal {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0; }
+    body #app .modal > .video {
+      height: 80vh;
+      width: 80vw;
+      left: 50%;
+      top: 50%;
+      background-color: white;
+      opacity: 0;
+      -webkit-transform: translate(-50%, -45%);
+      -ms-transform: translate(-50%, -45%);
+      transform: translate(-50%, -45%);
+      z-index: 10;
+      -webkit-box-shadow: 0 3px 50px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 3px 50px rgba(0, 0, 0, 0.75); }
+      body #app .modal > .video > iframe * {
+        border: none !important; }
+    body #app .modal .close {
+      background-color: transparent;
+      z-index: 1; }
+  body #app .modal.show {
+    opacity: 1;
+    pointer-events: all; }
+    body #app .modal.show .video {
+      opacity: 1;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+  body #app .thumb {
+    overflow: hidden;
+    cursor: pointer; }
+    body #app .thumb * {
+      pointer-events: none; }

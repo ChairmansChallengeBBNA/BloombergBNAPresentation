@@ -17,7 +17,103 @@
     </head>
 <body><div id="app">
 
-{{result}}
+<video src="/css/assets/quickVideo.mp4" loop="loop" autoplay="true"></video>
+
+<nav><div class="wrap">
+       
+   <ul>
+
+       <li v-for="(section, index) in sections" :key="section.name" @click="test(index)"><svg><circle></circle></svg><span>{{section.name}}</span></li>
+
+   </ul>
+
+</div></nav>
+
+<header>
+    <hgroup>
+        <div class="logo"></div>
+        <!--h1>2018 Diversity &amp; Inclusion Chairmen's Challenge</h1-->
+    </hgroup>
+</header>
+
+<main>
+   
+    <section :class="['top', {show: sections[0].visible}]">
+    
+        <div>
+            <h2>2018 Diversity &amp; Inclusion Chairmen's Challenge</h2>
+            <p>To align with the overall diversity initiatives promoted at all Bloomberg businesses and subsidiaries, Bloomberg BNA looked to our existing strengths to demonstrate that inclusion has always been a part of the Bloomberg BNA culture.</p>
+        </div>
+        
+        <span href="" @click="showModal(0)">
+            <h3>Diversity &amp; Inclusion Introduction</h3>
+            <span> <h4>Diversity Video</h4>This video, which uses several members of the Bloomberg BNA ‘family,’ is structured like a visual tone poem, lyrically expressing who we are as a company, why diversity is important to us, and how being your authentic self is important—both for employees and for the company itself—looking for a variety of backgrounds and perspectives to inform our products and services.</span>
+        </span>
+    
+    </section>
+    <section :class="['photos', {show: sections[1].visible}]">
+        
+        <h3>Pick a word</h3>
+        
+        <div class="gallery">
+            <div class="photo" style="background-image: url(css/assets/Booth.jpg)"></div>
+            <div class="photo" style="background-image: url(css/assets/Closeup.jpg)"></div>
+        </div>
+        
+        <div class="copy">
+            <h4>What diversity means to you.</h4>
+            <p>At the annual company picnic, we invited employees to write a word on a vast canvas, which illustrates “what diversity means to you.” We then invited select employees to explain their words in more detail, and why Bloomberg BNA is an ideal, multicultural workforce.</p>
+        </div>
+        
+        <ul>
+            <li @click="showModal(1)" class="thumb" v-html="spliceFrame(videos[1].id)"></li>
+            <li @click="showModal(2)" class="thumb" v-html="spliceFrame(videos[2].id)"></li>
+            <li @click="showModal(3)" class="thumb" v-html="spliceFrame(videos[3].id)"></li>
+            <li @click="showModal(4)" class="thumb" v-html="spliceFrame(videos[4].id)"></li>
+            <li @click="showModal(5)" class="thumb" v-html="spliceFrame(videos[5].id)"></li>
+            <li @click="showModal(6)" class="thumb" v-html="spliceFrame(videos[6].id)"></li>
+            <li @click="showModal(7)" class="thumb" v-html="spliceFrame(videos[7].id)"></li>
+            <li @click="showModal(8)" class="thumb" v-html="spliceFrame(videos[8].id)"></li>
+            <li @click="showModal(9)" class="thumb" v-html="spliceFrame(videos[9].id)"></li>
+            <li @click="showModal(10)" class="thumb" v-html="spliceFrame(videos[10].id)"></li>
+        </ul>
+        
+    </section>
+    <section :class="['bottom', {show: sections[2].visible}]">
+        <h4>Cultural Months</h4>
+        <p>For nearly every month of the year, Bloomberg BNA linked cultural celebrations relevant to that month to our employees, inviting them to share their experiences in video format. These videos, which feature candid interviews with our diverse workforce, are promoted online and inside the main corporate office.</p>
+        <ul class="row1">
+            <li @click="showModal(14)" class="thumb" v-html="spliceFrame(videos[14].id)"></li>
+            <li @click="showModal(15)" class="thumb" v-html="spliceFrame(videos[15].id)"></li>
+            <li @click="showModal(16)" class="thumb" v-html="spliceFrame(videos[16].id)"></li>
+            <li @click="showModal(17)" class="thumb" v-html="spliceFrame(videos[17].id)"></li>
+        </ul>
+        
+        <ul class="row2">
+            <li><b>International Women’s Day</b><br /> Arielle Elliott</li>
+            <li><b>Black History Month</b><br /> Jerome Ashton</li>
+            <li><b>Asian Pacific Heritage Month</b><br /> Teaganne Finn</li>
+            <li><b>Gay Pride Month</b><br /> Jazlyn Williams</li>
+        </ul>
+    </section>
+    
+</main>
+
+<div :class="['modal', {show: modal.state}]">
+    
+    <div class="video" v-html="currentVideo">
+        
+        
+        
+    </div>
+    
+    <div class="close" @click="closeModal"></div>
+    
+    <svg class="x" @click="closeModal"></svg>
+    
+</div>
+
+<footer></footer>
 
 </div><script src="js/main.js"></script></body>
 </html>

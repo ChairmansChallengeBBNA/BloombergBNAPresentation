@@ -17,28 +17,479 @@ body, html{ @extend .con, .full; }
 
 body{
     
-    @extend .flex;
+    @extend .con, .full;
     
     #app{
         
-        @include hw(90vh, 600px);
-        background: linear-gradient(115deg, #2c3e50 0%, white 500%);
-        box-shadow: 0 3px 10px mix(black, white, 50%);
+        @extend .con, .full;
+        overflow-y: scroll;
         overflow-x: hidden;
-        padding: 30px;
+        background-color: white;
         
-        ul {
+        &:after{
             
-            li{
+            content: "";
+            @extend .ab, .full, .centerBg;
+            background-size: contain;
+            background-position: bottom right;
+            z-index: -1;
+            pointer-events: none;
+            position: fixed;
+            background-image: url(assets/Footerimage.png);
+            
+        }
+        
+        video{
+            
+            @extend .abCenter;
+            position: fixed;
+            z-index: -1;
+            height: auto;
+            width: auto;
+            min-height: 100vh;
+            min-width: 100vw;
+            background-position: center;
+            background-size: cover;
+            opacity: .1;
+            display: none;
+            
+        }
+        
+        nav{
                 
-                margin: 7px 0;
-                color: white;
-                background-color:cadetblue;
-                padding: 10px;
-                border-radius: 5px;
-                box-shadow: 0 3px 5px rgba(0,0,0,.25);
+                @extend .ab;
+                position: fixed;
+                z-index: 1000;
+                @include hw(100vh, 100px);
+                
+                .wrap{
+                    
+                    background-color:  rgba(255,255,255,0);
+                    @include hw(100vh, 100px);
+                    z-index: 1;
+                    @extend .con;
+                    overflow: hidden;
+                    
+                    ul{
+                        
+                        @extend .abCenter;
+                        width: 30px;
+                        
+                        @keyframes link{
+                            
+                            0%{r:0;stroke-width:0;}
+                            50%{stroke-width:5;}
+                            100%{r:10;stroke-width:0;}
+                            
+                        }
+                        
+                        li{
+                            
+                            @extend .con;
+                            box-sizing: border-box;
+                            @include sq(30px);
+                            cursor: pointer;
+                            
+                            > * { @extend .ab; }
+                            
+                            svg{
+                                
+                                @include sq(30px);
+                                viewBox: 0 0 15 15;
+                                
+                                circle{
+                                    
+                                    cx: 15;
+                                    cy: 15;
+                                    fill: mix(black, white, 50%);
+                                    r: 5;
+                                    
+                                }
+                                
+                            }
+                            
+                            span{
+                                
+                                transform: translateX(25px);
+                                opacity: 0;
+                                line-height: 30px;
+                                width: 200px;
+                                
+                            }
+                            
+                        }
+                        
+                        li:hover{
+                            
+                            svg:first-child{
+                                
+                                circle{
+                                    
+                                    r: 6;
+                                    
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                        li:active{
+                            
+                            svg:first-child{
+                                
+                                circle{
+                                    
+                                    r: 4;
+                                    
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                        
+                        
+                    }
+                    
+                }
+                
+                &:after{
+                    
+                    content: "";
+                    @extend .ab, .full;
+                    background-color: rgba(0,0,0,0);
+                    pointer-events: none !important;
+                    z-index: -1;
+                    transition: all .25s ease 0s;
+                    
+                }
+                
+                &:hover{
+                    
+                    .wrap{
+                        
+                        width: 250px;
+                        box-shadow: 0 0 25px rgba(0,0,0,.5);
+                        background-color: rgba(255,255,255,1);
+                        
+                        ul{
+                            
+                            width: 170px;
+                            
+                            li{
+                                
+                                span{
+                                    
+                                    opacity: 1;
+                                    transform: translateX(35px);
+                                    
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                    &:after{
+                    
+                        background-color: rgba(0,0,0,.7);
+
+                    }
+                    
+                }
                 
             }
+        
+        header{
+            
+            hgroup{
+                
+                @extend .con;
+                @include hw(20vh, 100%);
+                padding-top: 7.5vh;
+                color: black;
+                text-shadow: 0 2.5px 30px rgba(0,0,0,.1);
+                
+                > * { width: 100%; text-align: center;  }
+                
+                .logo{
+                    
+                    @include hw(50px, 400px);
+                    margin-left: 50%;
+                    transform: translateX(-50%);
+                    background-size: 35%;
+                    background-image: url(assets/BNA_color.svg);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    
+                }
+                
+            }
+            
+        }
+        
+        main{
+            
+            .top{
+
+                @extend .con;
+                @include hw(80vh, 100%);
+                padding: 30px 120px 80px 120px;
+
+                div, > span { 
+
+                    float: left;
+                    display: block;
+                    width: 50%;
+                    box-sizing: border-box;
+
+                }
+                
+                div{
+                    
+                    padding-right: 30px;
+                    
+                    h2{ @include font(open sans, 700, 2.25em); margin-bottom: 20px; }
+                    
+                    p{@include font(work sans, 500, 2em); }
+                    
+                }
+                
+                > span{
+                    
+                    height: 60%;
+                    @extend .con;
+                    background-color: rgba(0,0,0,.5);
+                    @include centerBg(url(assets/frontvideo.png));
+                    cursor: pointer;
+                    
+                    > * { @extend .ab; }
+                    
+                    h3{
+                        
+                        padding: 30px 0 0 30px;
+                        color: white;
+                        @include font(source sans pro, 500, 1.5em);
+                        text-shadow: 0 2px 30px rgba(0,0,0,1);
+                        
+                    }
+                    
+                    > span{
+                        
+                        padding: 30px;
+                        top:100%;
+                        background-color: mix(black, white, 12.5%);
+                        color: rgba(0,0,0,.8);
+                        text-shadow: 0 2px 30px rgba(0,0,0,.25);
+                        
+                        h4{
+                            
+                            margin-bottom: 10px;
+                            @include font(source sans pro, 500, 1.25em);
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+            .photos{
+                
+                @extend .full, .con;
+                padding: 20px 120px 0;
+                
+                h3{
+                    
+                    width: 100%;
+                    text-align: center;
+                    @include font(open sans, 500, 3em);
+                    
+                }
+                
+                .gallery{
+                    
+                    padding: 20px 0 0;
+                    @extend .flex;
+                    justify-content: space-between;
+                    
+                    > *{
+                        
+                        background-color: grey;
+                        @extend .centerBg;
+                        @include hw(30vh, calc(50% - 40px));  
+                        background-position: top center;
+                        
+                    }
+                    
+                }
+                
+                .copy{
+                    
+                    padding: 15px 0 0;
+                    
+                    h4{
+                        
+                        width: 100%;
+                        margin-bottom: 5px;
+                        @include font(open sans, 500, 1.5em);
+                        
+                    }
+                    
+                    p{
+                        
+                        @include font(open sans, 500, 1em);
+                        
+                    }
+                    
+                }
+                
+                ul{
+                    
+                    @extend .flex;
+                    justify-content: space-between;
+                    
+                    li{
+                        
+                        width: calc(20% - 20px);
+                        margin-top: 30px;
+                        @extend .flex;
+                        height: 15vh;
+                        background-color: rgba(0,0,0,.2);
+                        
+                    }
+                    
+                }
+                
+            }
+            
+            .bottom{
+                
+                @extend .full, .con;
+                padding: 0 120px 0;
+                
+                h4{
+                    
+                    width: 100%;
+                    padding-top: 10vh;
+                    text-align: center;
+                    @include font(open sans, 500, 3em);
+                    margin-bottom: 30px;
+                    
+                }
+                
+                p{
+                    
+                    @include font(open sans, 500, 1.75em);
+                    margin: 40px 0;
+                    
+                }
+                
+                ul{
+                    
+                    @extend .flex;
+                    justify-content: space-between;
+                    
+                    li{
+                        
+                        width: calc(25% - 20px);
+                        margin-top: 30px;
+                        @extend .con;
+                        height: 20vh;
+                        //background-color: rgba(0,0,0,.2);
+                        height: 25vh;
+                        
+                        
+                    }
+                    
+                }
+                
+                
+                
+            }
+            
+            section{
+                
+                opacity: 1;
+                
+            }
+            
+            section.show{ opacity: 1; }
+            
+        }
+        
+        nav:hover ~ * {
+                
+            transform: translateX(75px);
+                
+        }
+        
+        .modal{
+            
+            @extend .ab, .full;
+            background-color:  rgba(0,0,0,.75);
+            position: fixed;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0;
+            
+            > .video{
+                
+                @include hw(80vh, 80vw);
+                @extend .ab;
+                left: 50%;
+                top: 50%;
+                background-color: white;
+                opacity: 0;
+                transform: translate(-50%, -45%);
+                z-index: 10;
+                box-shadow: 0 3px 50px rgba(0,0,0,.75);
+                
+                > iframe{
+                    
+                    @extend .ab;
+                    
+                    * { @extend .ab; border: none !important; }
+                    
+                }
+                
+            }
+            
+            .x{}
+            
+            .close{
+                
+                @extend .ab, .fill;
+                background-color: transparent;
+                z-index: 1;
+                
+            }
+            
+        }
+        
+        .modal.show{
+            
+            opacity: 1;
+            pointer-events: all;
+            
+            .video{
+                
+                opacity: 1;
+                transform: translate(-50%, -50%);
+                
+            }
+            
+        }
+        
+        .thumb{
+            
+            @extend .con;
+            overflow: hidden;
+            cursor: pointer;
+            
+            * { pointer-events: none;  }
             
         }
         
