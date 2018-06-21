@@ -217,7 +217,7 @@ body{
                     
                     @include hw(50px, 400px);
                     margin-left: 50%;
-                    transform: translateX(-50%);
+                    transform: translateX(-50%) scale(2);
                     background-size: 35%;
                     background-image: url(assets/BNA_color.svg);
                     background-repeat: no-repeat;
@@ -305,7 +305,7 @@ body{
                     
                     width: 100%;
                     text-align: center;
-                    @include font(open sans, 500, 3em);
+                    @include font(open sans, 700, 2.25em);
                     
                 }
                 
@@ -375,7 +375,7 @@ body{
                     width: 100%;
                     padding-top: 10vh;
                     text-align: center;
-                    @include font(open sans, 500, 3em);
+                    @include font(open sans, 700, 2.25em);
                     margin-bottom: 30px;
                     
                 }
@@ -398,7 +398,7 @@ body{
                         margin-top: 30px;
                         @extend .con;
                         height: 20vh;
-                        //background-color: rgba(0,0,0,.2);
+                        @include font(open sans, 700, 1.1em);
                         height: 25vh;
                         
                         

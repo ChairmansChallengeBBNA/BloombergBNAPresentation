@@ -209,9 +209,9 @@ body #app {
       height: 50px;
       width: 400px;
       margin-left: 50%;
-      -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%) scale(2);
+      -ms-transform: translateX(-50%) scale(2);
+      transform: translateX(-50%) scale(2);
       background-size: 35%;
       background-image: url(assets/BNA_color.svg);
       background-repeat: no-repeat;
@@ -266,8 +266,8 @@ body #app {
       width: 100%;
       text-align: center;
       font-family: "open sans", sans-serif;
-      font-weight: 500;
-      font-size: 3em; }
+      font-weight: 700;
+      font-size: 2.25em; }
     body #app main .photos .gallery {
       padding: 20px 0 0;
       -webkit-box-pack: justify;
@@ -306,8 +306,8 @@ body #app {
       padding-top: 10vh;
       text-align: center;
       font-family: "open sans", sans-serif;
-      font-weight: 500;
-      font-size: 3em;
+      font-weight: 700;
+      font-size: 2.25em;
       margin-bottom: 30px; }
     body #app main .bottom p {
       font-family: "open sans", sans-serif;
@@ -322,6 +322,9 @@ body #app {
         width: calc(25% - 20px);
         margin-top: 30px;
         height: 20vh;
+        font-family: "open sans", sans-serif;
+        font-weight: 700;
+        font-size: 1.1em;
         height: 25vh; }
   body #app main section {
     opacity: 1; }
